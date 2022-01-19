@@ -1,13 +1,15 @@
 # hello-minikube
 
+GKEのサンプルアプリケーション[hello-app](https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/main/hello-app/README.md)をローカルのMinikubeにデプロイするための手順です。
+
 ## 前提条件
 
-minikubeがインストールされている必要があります。 \
+Minikubeがインストールされている必要があります。 \
 まだインストールしていなければ、[こちら](https://minikube.sigs.k8s.io/docs/start/)を参考にインストールしてください。
 
 ## セットアップ
 
-minikubeを開始します。
+Minikubeを開始します。
 
 ```
 minikube start
@@ -32,6 +34,15 @@ ingress-nginx-controller-5f66978484-fgjmt   1/1     Running     1          23h
 
 ```
 kubectl apply -k .
+```
+
+次のように`hello-web-xxxxxxxx-xxxxx`がデプロイされていればOKです。
+
+```
+NAME                         READY   STATUS    RESTARTS   AGE
+hello-web-56b584bd88-fbdrs   1/1     Running   0          8m57s
+hello-web-56b584bd88-nfq46   1/1     Running   0          8m57s
+hello-web-56b584bd88-wwjhq   1/1     Running   0          8m57s
 ```
 
 ## ブラウザから確認する
